@@ -1,0 +1,9 @@
+{
+	"name": "adflearn-test",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "450598ec-f2c2-478f-a8b8-e22d46386b73",
+		"tenantId": "604c1504-c6a3-4080-81aa-b33091104187"
+	}
+}
