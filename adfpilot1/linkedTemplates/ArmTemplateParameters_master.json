@@ -11,6 +11,15 @@
 		"AzureFileStorage1_connectionString": {
 			"value": ""
 		},
+		"FileServer1_password": {
+			"value": ""
+		},
+		"FileServer1_properties_typeProperties_host": {
+			"value": "F:\\graju\\graju\\Training\\Data Engineering"
+		},
+		"FileServer1_properties_typeProperties_userId": {
+			"value": "raju"
+		},
 		"containerUri": {
 			"value": ""
 		},
