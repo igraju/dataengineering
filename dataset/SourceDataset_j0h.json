@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureFileStorageLocation",
-				"fileName": "test1.csv"
+				"fileName": "test.csv",
+				"folderPath": "testfolder"
 			},
 			"columnDelimiter": "|",
 			"escapeChar": "\\",
