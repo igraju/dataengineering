@@ -1,0 +1,9 @@
+{
+	"name": "adfpilot1",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "b165eba2-4fbd-4869-afb7-beaf19cc8522",
+		"tenantId": "604c1504-c6a3-4080-81aa-b33091104187"
+	}
+}
