@@ -1,9 +1,9 @@
 {
 	"name": "adfpilot1",
-	"location": "westus",
+	"location": "southindia",
 	"identity": {
 		"type": "SystemAssigned",
-		"principalId": "b165eba2-4fbd-4869-afb7-beaf19cc8522",
+		"principalId": "216b0af6-547a-44b1-a10b-0525aa686828",
 		"tenantId": "604c1504-c6a3-4080-81aa-b33091104187"
 	}
 }
