@@ -52,7 +52,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy Cases Death Data From ECDC_copy1",
+							"name": "Copy Cases Death Data From ECDC",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
