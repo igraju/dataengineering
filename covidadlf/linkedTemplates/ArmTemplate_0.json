@@ -55,7 +55,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_population_raw_2_gz')]",
+			"name": "[concat(parameters('factoryName'), '/ds_population_raw_gz')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -135,7 +135,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_population_raw_2_gz",
+								"referenceName": "ds_population_raw_gz",
 								"type": "DatasetReference",
 								"parameters": {}
 							},
@@ -164,7 +164,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_population_raw_2_gz",
+								"referenceName": "ds_population_raw_gz",
 								"type": "DatasetReference",
 								"parameters": {}
 							},
@@ -278,7 +278,7 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "ds_population_raw_2_gz",
+											"referenceName": "ds_population_raw_gz",
 											"type": "DatasetReference",
 											"parameters": {}
 										}
@@ -312,7 +312,7 @@
 									"userProperties": [],
 									"typeProperties": {
 										"dataset": {
-											"referenceName": "ds_population_raw_2_gz",
+											"referenceName": "ds_population_raw_gz",
 											"type": "DatasetReference",
 											"parameters": {}
 										},
@@ -335,7 +335,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_population_raw_2_gz')]",
+				"[concat(variables('factoryId'), '/datasets/ds_population_raw_gz')]",
 				"[concat(variables('factoryId'), '/datasets/ds_population_raw_tsv')]"
 			]
 		}
