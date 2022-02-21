@@ -1,5 +1,5 @@
 {
-	"name": "ds_population_raw2_tsv",
+	"name": "ds_population_raw_tsv",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_adls_covidlearnadls1",
