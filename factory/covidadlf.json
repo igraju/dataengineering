@@ -3,7 +3,7 @@
 	"location": "southindia",
 	"identity": {
 		"type": "SystemAssigned",
-		"principalId": "5b71901f-f145-4ff1-9d9c-29e00bf04e47",
-		"tenantId": "604c1504-c6a3-4080-81aa-b33091104187"
+		"principalId": "b0b5dde2-e759-4c4a-bef3-0ac32da02166",
+		"tenantId": "4dbc3ee6-d0fa-4798-92dc-22d159f8cb99"
 	}
 }
