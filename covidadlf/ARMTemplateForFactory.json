@@ -170,17 +170,6 @@
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
 				},
-				"parameters": {
-					"sourceRelativeURL": {
-						"type": "string"
-					},
-					"sinkFilename": {
-						"type": "string"
-					},
-					"baseURL": {
-						"type": "string"
-					}
-				},
 				"annotations": []
 			},
 			"dependsOn": [
@@ -676,7 +665,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -690,7 +679,7 @@
 				"typeProperties": {
 					"recurrence": {
 						"frequency": "Minute",
-						"interval": 3,
+						"interval": 2,
 						"startTime": "2022-02-21T13:07:00Z",
 						"endTime": "2022-02-22T16:07:00Z",
 						"timeZone": "UTC"
