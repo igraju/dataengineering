@@ -155,7 +155,7 @@
 							],
 							"outputs": [
 								{
-									"referenceName": "ds_population_raw_tsv",
+									"referenceName": "ds_population_raw2_tsv",
 									"type": "DatasetReference"
 								}
 							]
