@@ -1,0 +1,9 @@
+{
+	"name": "covidadlf",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5b71901f-f145-4ff1-9d9c-29e00bf04e47",
+		"tenantId": "604c1504-c6a3-4080-81aa-b33091104187"
+	}
+}
