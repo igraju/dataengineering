@@ -36,11 +36,11 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"fieldList": [
-						"columnCount",
-						"size",
-						"exists"
-					],
+					"dataset": {
+						"referenceName": "ds_population_raw_2_gz",
+						"type": "DatasetReference"
+					},
+					"fieldList": [],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
 						"recursive": true,
