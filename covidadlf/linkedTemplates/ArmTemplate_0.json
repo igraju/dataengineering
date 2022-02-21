@@ -94,7 +94,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_population_raw2_tsv')]",
+			"name": "[concat(parameters('factoryName'), '/ds_population_raw_tsv')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -285,7 +285,7 @@
 									],
 									"outputs": [
 										{
-											"referenceName": "ds_population_raw2_tsv",
+											"referenceName": "ds_population_raw_tsv",
 											"type": "DatasetReference",
 											"parameters": {}
 										}
@@ -336,7 +336,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_population_raw_2_gz')]",
-				"[concat(variables('factoryId'), '/datasets/ds_population_raw2_tsv')]"
+				"[concat(variables('factoryId'), '/datasets/ds_population_raw_tsv')]"
 			]
 		}
 	]
