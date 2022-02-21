@@ -5,12 +5,17 @@
 			"referenceName": "ls_httpreq_opendata_cedc",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"relativeURL": {
+				"type": "string",
+				"defaultValue": "covid19/nationalcasedeath/csv/data.csv"
+			}
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": "covid19/nationalcasedeath/csv/data.csv"
+				"type": "HttpServerLocation"
 			},
 			"columnDelimiter": "\t",
 			"escapeChar": "\\",
