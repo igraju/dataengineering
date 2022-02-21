@@ -6,7 +6,7 @@
 		"pipelines": [
 			{
 				"pipelineReference": {
-					"referenceName": "pl_ingest_casesdeath_data",
+					"referenceName": "pl_ingest_ecdc_covid_data",
 					"type": "PipelineReference"
 				}
 			}
