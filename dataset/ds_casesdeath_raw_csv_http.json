@@ -7,8 +7,7 @@
 		},
 		"parameters": {
 			"relativeURL": {
-				"type": "string",
-				"defaultValue": "covid19/nationalcasedeath/csv/data.csv"
+				"type": "string"
 			}
 		},
 		"annotations": [],
