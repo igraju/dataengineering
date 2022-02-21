@@ -124,28 +124,11 @@
 									}
 								}
 							]
-						},
-						{
-							"name": "Set variable1_copy1",
-							"type": "SetVariable",
-							"dependsOn": [],
-							"userProperties": []
 						}
 					]
 				}
-			},
-			{
-				"name": "Set variable1",
-				"type": "SetVariable",
-				"dependsOn": [],
-				"userProperties": []
 			}
 		],
-		"parameters": {
-			"baseURL": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
