@@ -5,7 +5,14 @@
 			{
 				"name": "Copy Population Data",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "Check If File Exists",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.00:00:00",
 					"retry": 0,
@@ -13,7 +20,16 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "population//population_by_age.tsv.gz"
+					},
+					{
+						"name": "Destination",
+						"value": "raw/population/population_by_age"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
