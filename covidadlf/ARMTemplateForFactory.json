@@ -55,7 +55,8 @@
 								"type": "DelimitedTextSource",
 								"storeSettings": {
 									"type": "HttpReadSettings",
-									"requestMethod": "GET"
+									"requestMethod": "GET",
+									"requestTimeout": ""
 								},
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings"
@@ -87,7 +88,10 @@
 								"referenceName": "ds_casesdeath_raw_csv_http",
 								"type": "DatasetReference",
 								"parameters": {
-									"relativeURL": "covid19/nationalcasedeath/csv/data.csv"
+									"relativeURL": {
+										"value": "@pipeline().parameters.sourceRelativeURL",
+										"type": "Expression"
+									}
 								}
 							}
 						],
@@ -96,7 +100,10 @@
 								"referenceName": "ls_casesdeath_raw_csv_dl",
 								"type": "DatasetReference",
 								"parameters": {
-									"sinkFilename": "cases_deaths.csv"
+									"sinkFilename": {
+										"value": "@pipeline().parameters.sinkFilename",
+										"type": "Expression"
+									}
 								}
 							}
 						]
@@ -105,6 +112,14 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"parameters": {
+					"sourceRelativeURL": {
+						"type": "string"
+					},
+					"sinkFilename": {
+						"type": "string"
+					}
 				},
 				"annotations": []
 			},
@@ -341,8 +356,7 @@
 				},
 				"parameters": {
 					"relativeURL": {
-						"type": "string",
-						"defaultValue": "covid19/nationalcasedeath/csv/data.csv"
+						"type": "string"
 					}
 				},
 				"annotations": [],
@@ -445,8 +459,7 @@
 				},
 				"parameters": {
 					"sinkFilename": {
-						"type": "string",
-						"defaultValue": "cases_deaths.csv"
+						"type": "string"
 					}
 				},
 				"annotations": [],
