@@ -75,10 +75,12 @@
 		],
 		"parameters": {
 			"sourceRelativeURL": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "/covid19/nationalcasedeath/csv/data.csv"
 			},
 			"sinkFilename": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "cases_deaths.csv"
 			}
 		},
 		"annotations": []
