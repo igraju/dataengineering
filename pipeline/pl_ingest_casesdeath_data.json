@@ -67,6 +67,14 @@
 				]
 			}
 		],
+		"parameters": {
+			"sourceRelativeURL": {
+				"type": "string"
+			},
+			"sinkFilename": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
