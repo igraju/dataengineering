@@ -9,7 +9,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ds_population_raw_2_gz",
+						"referenceName": "ds_population_raw_gz",
 						"type": "DatasetReference"
 					},
 					"timeout": "0.00:01:00",
@@ -37,7 +37,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "ds_population_raw_2_gz",
+						"referenceName": "ds_population_raw_gz",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -149,7 +149,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "ds_population_raw_2_gz",
+									"referenceName": "ds_population_raw_gz",
 									"type": "DatasetReference"
 								}
 							],
@@ -181,7 +181,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"dataset": {
-									"referenceName": "ds_population_raw_2_gz",
+									"referenceName": "ds_population_raw_gz",
 									"type": "DatasetReference"
 								},
 								"enableLogging": false,
