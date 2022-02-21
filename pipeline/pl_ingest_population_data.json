@@ -96,7 +96,7 @@
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
-					"timeout": ".02:00:00",
+					"timeout": "0.02:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 600,
 					"secureOutput": false,
