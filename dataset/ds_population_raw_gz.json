@@ -9,9 +9,7 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
-				"fileName": "population_by_age.tsv.gz",
-				"container": "population"
+				"type": "AzureBlobStorageLocation"
 			},
 			"columnDelimiter": "\t",
 			"compressionCodec": "gzip",
