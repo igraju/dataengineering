@@ -527,13 +527,6 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "pl_ingest_population_data",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					},
-					{
-						"pipelineReference": {
 							"referenceName": "pl_ingest_casesdeath_data",
 							"type": "PipelineReference"
 						},
@@ -552,7 +545,6 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pl_ingest_population_data')]",
 				"[concat(variables('factoryId'), '/pipelines/pl_ingest_casesdeath_data')]"
 			]
 		},
