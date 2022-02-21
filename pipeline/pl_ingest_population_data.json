@@ -8,6 +8,10 @@
 				"dependsOn": [],
 				"userProperties": [],
 				"typeProperties": {
+					"dataset": {
+						"referenceName": "ds_population_raw_2_gz",
+						"type": "DatasetReference"
+					},
 					"timeout": "0.00:01:00",
 					"sleep": 10
 				}
