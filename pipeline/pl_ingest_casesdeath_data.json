@@ -52,7 +52,10 @@
 						"referenceName": "ds_casesdeath_raw_csv_http",
 						"type": "DatasetReference",
 						"parameters": {
-							"relativeURL": "covid19/nationalcasedeath/csv/data.csv"
+							"relativeURL": {
+								"value": "@pipeline().parameters.sourceRelativeURL",
+								"type": "Expression"
+							}
 						}
 					}
 				],
@@ -61,7 +64,10 @@
 						"referenceName": "ls_casesdeath_raw_csv_dl",
 						"type": "DatasetReference",
 						"parameters": {
-							"sinkFilename": "cases_deaths.csv"
+							"sinkFilename": {
+								"value": "@pipeline().parameters.sinkFilename",
+								"type": "Expression"
+							}
 						}
 					}
 				]
