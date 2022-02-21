@@ -55,7 +55,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_population_raw_gz')]",
+			"name": "[concat(parameters('factoryName'), '/ds_population_raw_2_gz')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -80,9 +80,11 @@
 				},
 				"schema": [
 					{
+						"name": "\u001f�\b\bHK�^\u0000\u0003tps00010.tsv\u0000�\\ێ�H�}�~E~�� ����ۖ�B�l��j��\u0002\u0006�c",
 						"type": "String"
 					},
 					{
+						"name": "�aw����U���8��jz�m�p$Q�ɸg0�������\u001f?���o�������_�\u000e]��!ᒰm\u0004[�N0",
 						"type": "String"
 					}
 				]
@@ -92,7 +94,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/ds_population_raw_tsv')]",
+			"name": "[concat(parameters('factoryName'), '/ds_population_raw2_tsv')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -133,13 +135,12 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_population_raw_gz",
+								"referenceName": "ds_population_raw_2_gz",
 								"type": "DatasetReference",
 								"parameters": {}
 							},
 							"timeout": "0.00:01:00",
-							"sleep": 10,
-							"minimumSize": 1000
+							"sleep": 10
 						}
 					},
 					{
@@ -163,7 +164,7 @@
 						"userProperties": [],
 						"typeProperties": {
 							"dataset": {
-								"referenceName": "ds_population_raw_gz",
+								"referenceName": "ds_population_raw_2_gz",
 								"type": "DatasetReference",
 								"parameters": {}
 							},
@@ -174,6 +175,7 @@
 							],
 							"storeSettings": {
 								"type": "AzureBlobStorageReadSettings",
+								"recursive": true,
 								"enablePartitionDiscovery": false
 							},
 							"formatSettings": {
@@ -276,18 +278,51 @@
 									},
 									"inputs": [
 										{
-											"referenceName": "ds_population_raw_gz",
+											"referenceName": "ds_population_raw_2_gz",
 											"type": "DatasetReference",
 											"parameters": {}
 										}
 									],
 									"outputs": [
 										{
-											"referenceName": "ds_population_raw_tsv",
+											"referenceName": "ds_population_raw2_tsv",
 											"type": "DatasetReference",
 											"parameters": {}
 										}
 									]
+								},
+								{
+									"name": "Delete File",
+									"type": "Delete",
+									"dependsOn": [
+										{
+											"activity": "Copy Population Data",
+											"dependencyConditions": [
+												"Succeeded"
+											]
+										}
+									],
+									"policy": {
+										"timeout": "7.00:00:00",
+										"retry": 0,
+										"retryIntervalInSeconds": 30,
+										"secureOutput": false,
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"dataset": {
+											"referenceName": "ds_population_raw_2_gz",
+											"type": "DatasetReference",
+											"parameters": {}
+										},
+										"enableLogging": false,
+										"storeSettings": {
+											"type": "AzureBlobStorageReadSettings",
+											"recursive": false,
+											"enablePartitionDiscovery": false
+										}
+									}
 								}
 							]
 						}
@@ -300,8 +335,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ds_population_raw_gz')]",
-				"[concat(variables('factoryId'), '/datasets/ds_population_raw_tsv')]"
+				"[concat(variables('factoryId'), '/datasets/ds_population_raw_2_gz')]",
+				"[concat(variables('factoryId'), '/datasets/ds_population_raw2_tsv')]"
 			]
 		}
 	]
