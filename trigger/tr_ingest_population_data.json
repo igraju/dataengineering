@@ -13,8 +13,7 @@
 		],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
-			"blobPathBeginsWith": "/population/blobs/population_by_age",
-			"blobPathEndsWith": "gz",
+			"blobPathBeginsWith": "/population/blobs/population_by_age.tsv.gz",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/77dee7b2-772f-4da6-892c-54c57212df65/resourceGroups/covidpoc/providers/Microsoft.Storage/storageAccounts/covidlearn1",
 			"events": [
