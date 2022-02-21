@@ -1,5 +1,5 @@
 {
-	"name": "ds_casesdeath_csv",
+	"name": "ds_casesdeath_raw_csv_http",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_httpreq_opendata_cedc",
