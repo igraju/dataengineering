@@ -21,7 +21,7 @@
 		},
 		"ls_httpreq_opendata_cedc_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://opendata.ecdc.europa.eu"
+			"defaultValue": "@{linkedService().sourceBaseURL}"
 		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"type": "string",

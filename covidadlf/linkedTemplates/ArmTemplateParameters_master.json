@@ -15,7 +15,7 @@
 			"value": "https://covidlearnadls1.dfs.core.windows.net"
 		},
 		"ls_httpreq_opendata_cedc_properties_typeProperties_url": {
-			"value": "https://opendata.ecdc.europa.eu"
+			"value": "@{linkedService().sourceBaseURL}"
 		},
 		"tr_ingest_population_data_properties_typeProperties_scope": {
 			"value": "/subscriptions/77dee7b2-772f-4da6-892c-54c57212df65/resourceGroups/covidpoc/providers/Microsoft.Storage/storageAccounts/covidlearn1"
