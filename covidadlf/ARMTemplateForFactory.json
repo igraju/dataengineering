@@ -89,7 +89,7 @@
 							},
 							"activities": [
 								{
-									"name": "Copy Cases Death Data From ECDC_copy1",
+									"name": "Copy Cases Death Data From ECDC",
 									"type": "Copy",
 									"dependsOn": [],
 									"policy": {
@@ -511,7 +511,13 @@
 			"properties": {
 				"linkedServiceName": {
 					"referenceName": "ls_httpreq_opendata_cedc",
-					"type": "LinkedServiceReference"
+					"type": "LinkedServiceReference",
+					"parameters": {
+						"sourceBaseURL": {
+							"value": "@dataset().baseURL",
+							"type": "Expression"
+						}
+					}
 				},
 				"parameters": {
 					"relativeURL": {
@@ -665,7 +671,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
