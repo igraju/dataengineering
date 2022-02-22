@@ -161,6 +161,19 @@
 											}
 										}
 									]
+								},
+								{
+									"name": "Set variable1",
+									"type": "SetVariable",
+									"dependsOn": [],
+									"userProperties": [],
+									"typeProperties": {
+										"variableName": "testRelVal",
+										"value": {
+											"value": "@item().sourceRelativeURL",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
@@ -169,6 +182,11 @@
 				"policy": {
 					"elapsedTimeMetric": {},
 					"cancelAfter": {}
+				},
+				"variables": {
+					"testRelVal": {
+						"type": "String"
+					}
 				},
 				"annotations": []
 			},
@@ -671,30 +689,20 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pl_ingest_ecdc_covid_data",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
+				"runtimeState": "Stopped",
+				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Minute",
-						"interval": 2,
+						"frequency": "Hour",
+						"interval": 4,
 						"startTime": "2022-02-21T13:07:00Z",
 						"endTime": "2022-02-23T16:07:00Z",
 						"timeZone": "UTC"
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pl_ingest_ecdc_covid_data')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/tr_ingest_population_data')]",
@@ -724,6 +732,76 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/pl_ingest_population_data')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/ds_cases_deaths_csv')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "ls_adls_covidlearnadls1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"fileName": "cases_deaths.csv",
+						"folderPath": "ecdc/cases_deaths",
+						"fileSystem": "raw"
+					},
+					"columnDelimiter": "\t",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "\"country\t\"\"country_code\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"continent\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"population\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"indicator\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"weekly_count\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"year_week\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"rate_14_day\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"cumulative_count\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"source\"\"",
+						"type": "String"
+					},
+					{
+						"name": "\"\"note\"\"\"",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/ls_adls_covidlearnadls1')]"
 			]
 		}
 	]
