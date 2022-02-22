@@ -124,6 +124,19 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "Set variable1",
+							"type": "SetVariable",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"variableName": "testRelVal",
+								"value": {
+									"value": "@item().sourceRelativeURL",
+									"type": "Expression"
+								}
+							}
 						}
 					]
 				}
