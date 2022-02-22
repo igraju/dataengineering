@@ -129,6 +129,11 @@
 				}
 			}
 		],
+		"variables": {
+			"testRelVal": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
