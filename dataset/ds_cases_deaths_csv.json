@@ -21,47 +21,43 @@
 		},
 		"schema": [
 			{
-				"name": "Prop_0",
+				"name": "\"country\t\"\"country_code\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_1",
+				"name": "\"\"continent\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_2",
+				"name": "\"\"population\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_3",
+				"name": "\"\"indicator\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_4",
+				"name": "\"\"weekly_count\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_5",
+				"name": "\"\"year_week\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_6",
+				"name": "\"\"rate_14_day\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_7",
+				"name": "\"\"cumulative_count\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_8",
+				"name": "\"\"source\"\"",
 				"type": "String"
 			},
 			{
-				"name": "Prop_9",
-				"type": "String"
-			},
-			{
-				"name": "Prop_10",
+				"name": "\"\"note\"\"\"",
 				"type": "String"
 			}
 		]
