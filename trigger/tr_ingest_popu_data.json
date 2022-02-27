@@ -2,15 +2,8 @@
 	"name": "tr_ingest_popu_data",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
-		"pipelines": [
-			{
-				"pipelineReference": {
-					"referenceName": "pl_ingest_ecdc_covid_data",
-					"type": "PipelineReference"
-				}
-			}
-		],
+		"runtimeState": "Started",
+		"pipelines": [],
 		"type": "ScheduleTrigger",
 		"typeProperties": {
 			"recurrence": {
