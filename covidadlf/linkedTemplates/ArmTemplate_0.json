@@ -400,9 +400,12 @@
 					"transformations": [
 						{
 							"name": "FIlterForIndiaOnly"
+						},
+						{
+							"name": "SelectOnlyRequiredFields"
 						}
 					],
-					"script": "source(output(\n\t\tcountry as string,\n\t\tcountry_code as string,\n\t\tcontinent as string,\n\t\tpopulation as integer,\n\t\tindicator as string,\n\t\tweekly_count as integer,\n\t\tyear_week as string,\n\t\trate_14_day as double,\n\t\tcumulative_count as integer,\n\t\tsource as string,\n\t\tnote as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tignoreNoFilesFound: false,\n\tformat: 'delimited',\n\tfileSystem: 'raw',\n\tfolderPath: 'ecdc/cases_deaths',\n\tfileName: 'cases_deaths.csv',\n\tcolumnDelimiter: ',',\n\tescapeChar: '\\\\',\n\tquoteChar: '\\\"',\n\tcolumnNamesAsHeader: true) ~> CasesAndDeatshSource\nCasesAndDeatshSource filter(country == \"India\" || country == \"United Kingdom\") ~> FIlterForIndiaOnly\nFIlterForIndiaOnly sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'json',\n\tfileSystem: 'processed',\n\tpartitionFileNames:['cases_deaths_processed.json'],\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tsaveOrder: 1,\n\tpartitionBy('hash', 1)) ~> CasesAndDeathSink"
+					"script": "source(output(\n\t\tcountry as string,\n\t\tcountry_code as string,\n\t\tcontinent as string,\n\t\tpopulation as integer,\n\t\tindicator as string,\n\t\tweekly_count as integer,\n\t\tyear_week as string,\n\t\trate_14_day as double,\n\t\tcumulative_count as integer,\n\t\tsource as string,\n\t\tnote as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tignoreNoFilesFound: false,\n\tformat: 'delimited',\n\tfileSystem: 'raw',\n\tfolderPath: 'ecdc/cases_deaths',\n\tfileName: 'cases_deaths.csv',\n\tcolumnDelimiter: ',',\n\tescapeChar: '\\\\',\n\tquoteChar: '\\\"',\n\tcolumnNamesAsHeader: true) ~> CasesAndDeatshSource\nCasesAndDeatshSource filter(country == \"India\" || country == \"United Kingdom\") ~> FIlterForIndiaOnly\nFIlterForIndiaOnly select(mapColumn(\n\t\tcountry,\n\t\tcountry_code,\n\t\tcontinent,\n\t\tpopulation,\n\t\tindicator,\n\t\tweekly_count,\n\t\trate_14_day,\n\t\tcumulative_count\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> SelectOnlyRequiredFields\nSelectOnlyRequiredFields sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'json',\n\tfileSystem: 'processed',\n\tpartitionFileNames:['cases_deaths_processed.json'],\n\tumask: 0022,\n\tpreCommands: [],\n\tpostCommands: [],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tsaveOrder: 1,\n\tpartitionBy('hash', 1)) ~> CasesAndDeathSink"
 				}
 			},
 			"dependsOn": [
