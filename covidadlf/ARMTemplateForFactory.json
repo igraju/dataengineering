@@ -808,19 +808,29 @@
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [],
+				"pipelines": [
+					{
+						"pipelineReference": {
+							"referenceName": "pl_ingest_ecdc_covid_data",
+							"type": "PipelineReference"
+						},
+						"parameters": {}
+					}
+				],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
-						"frequency": "Hour",
+						"frequency": "Minute",
 						"interval": 4,
-						"startTime": "2022-02-21T13:07:00Z",
-						"endTime": "2022-02-23T16:07:00Z",
+						"startTime": "2022-02-27T13:07:00Z",
+						"endTime": "2022-02-28T16:07:00Z",
 						"timeZone": "UTC"
 					}
 				}
 			},
-			"dependsOn": []
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pl_ingest_ecdc_covid_data')]"
+			]
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/tr_ingest_population_data')]",
